@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruleta Fiestika</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card hero" aria-label="Bienvenida Fiestika">
+        <img class="logo" src="./assets/img/logo2.png" alt="Fiestika" />
+        <h1>
+          <span class="gradient-text">Gira</span> y gana un detalle para tu
+          fiesta
+        </h1>
+        <p class="subtitle">
+          Una experiencia rápida, bonita y con premio. Ingresa tu código enviado
+          por WhatsApp y descubre qué ganaste.
+        </p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <div class="benefit-icon pink">🎁</div>
+            <span>Premios personalizados para celebrar bonito.</span>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon yellow">💬</div>
+            <span>Confirma tu premio directamente por WhatsApp.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card game-card" aria-label="Ruleta de premios">
+        <div class="game-header">
+          <div class="badge">✨ Ruleta de premios</div>
+          <div class="secure">🔐 1 giro por código</div>
+        </div>
+
+        <div class="game-grid">
+          <div class="wheel-wrap">
+            <div class="wheel-shadow"></div>
+            <div class="pointer" aria-hidden="true"></div>
+            <canvas
+              id="wheel"
+              width="900"
+              height="900"
+              aria-label="Ruleta Fiestika"
+            ></canvas>
+            <button class="center-button" id="spinCenter" type="button">
+              <span>GIRAR<br />AHORA</span>
+            </button>
+          </div>
+
+          <aside class="side-panel">
+            <h2>Ingresa tu código y toca la ruleta</h2>
+
+            <div class="code-card">
+              <label for="clientCode">Código temporal</label>
+              <input
+                id="clientCode"
+                autocomplete="off"
+                placeholder="Ej: FIESTIKA-001"
+              />
+              <button class="primary-btn" id="spinBtn" type="button">
+                Girar ruleta
+              </button>
+            </div>
+
+            <div class="status" id="status">
+              Coloca tu código para activar tu giro.
+            </div>
+
+            <div class="prize-list" aria-label="Lista de premios">
+              <div class="prize-pill">5 toppers</div>
+              <div class="prize-pill">5 maxi toppers</div>
+              <div class="prize-pill">1 Cake topper 3D</div>
+              <div class="prize-pill">5 sorbetes</div>
+              <div class="prize-pill">Delivery gratis</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-card">
+        <div class="modal-content">
+          <div style="font-size: 42px">🎉</div>
+          <h2 id="modalTitle">¡Felicidades!</h2>
+          <p>Tu giro fue registrado correctamente.</p>
+          <div class="prize-name" id="prizeName">Te ganaste un premio</div>
+          <p id="codeResult"></p>
+          <a
+            class="whatsapp"
+            id="whatsappLink"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            >Confirmar por WhatsApp</a
+          >
+          <button class="ghost-btn" id="closeModal" type="button">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/inter.min.js"></script>
+      
+  </body>
+</html>
